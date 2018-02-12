@@ -3,6 +3,6 @@
  * Created by PhpStorm.
  * User: mindu
  * Date: 2018-02-12
- * Time: 20:13
+ * Time: 20:16
  */
-$a=2;
+$b = 123123123;

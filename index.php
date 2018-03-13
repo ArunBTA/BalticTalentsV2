@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_URI'] == $base) {
     }
 }
 
-if (!file_exists('controllers/' . $ctrl . '.php')) {
+if (!file_exists('controllers/'.$ctrl.'.php')) {
     $ctrl = 'radars/list';
 }
 
@@ -31,5 +31,5 @@ if (!file_exists('controllers/' . $ctrl . '.php')) {
 
 include 'views/header.php';
 include 'views/menu.php';
-include 'controllers/' . $ctrl . '.php';
+include 'controllers/'.$ctrl.'.php';
 include 'views/footer.php';

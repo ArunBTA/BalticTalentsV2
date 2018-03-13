@@ -1,6 +1,6 @@
 <?php
 
-require_once $dir . '/models/radars.php';
+require_once $dir . '/models/Radar.php';
 
 $id = $_REQUEST['id'];
 $a = Radar::get($id);

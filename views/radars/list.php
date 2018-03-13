@@ -14,7 +14,7 @@ foreach($radars as $a): ?>
     <tr>
         <td><?= $nr++ ?></td>
         <td><?= $a->number ?></td>
-        <td><?= $a->date ?></td>
+        <td><?= $a->date->format('Y-m-d') ?></td>
         <td><?= $a->speed ?></td>
         <td>
             <a href="<?= $base ?>radars/edit?id=<?= $a->id ?>">Redaguoti</a> 

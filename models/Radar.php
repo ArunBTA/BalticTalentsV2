@@ -52,7 +52,7 @@ class Radar
      */
     public static function all(int $limit, int $offset)
     {
-        $results = DB::connection()->prepare('SELECT * FROM radars ORDER BY `number`, `date` DESC')->fetchAll();
+        $results = DB::connection()->query('SELECT * FROM radars ORDER BY `number`, `date` DESC')->fetchAll();
 
         $radars = [];
         foreach ($results as $result) {

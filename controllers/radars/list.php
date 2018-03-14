@@ -2,6 +2,6 @@
 
 require_once $dir . '/models/Radar.php';
 
-$radars = Radar::all(100, 0);
+$radars = Radar::all();
 
 include $dir . '/views/radars/list.php';

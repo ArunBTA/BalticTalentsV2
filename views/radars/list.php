@@ -9,16 +9,16 @@
 
 <?php
 // output data of each row
-$nr = 1;
-foreach($radars as $a): ?>
+/** @var Radar $radar */
+foreach ($radars as $key => $radar): ?>
     <tr>
-        <td><?= $nr++ ?></td>
-        <td><?= $a->number ?></td>
-        <td><?= $a->date->format('Y-m-d') ?></td>
-        <td><?= $a->speed ?></td>
+        <td><?= $radar->getId() ?></td>
+        <td><?= $radar->getNumber() ?></td>
+        <td><?= $radar->getDate()->format('Y-m-d') ?></td>
+        <td><?= $radar->getSpeed() ?></td>
         <td>
-            <a href="<?= $base ?>radars/edit?id=<?= $a->id ?>">Redaguoti</a> 
-            <a href="<?= $base ?>radars/delete?id=<?= $a->id ?>">Trinti</a> 
+            <a href="<?= $base ?>radars/edit?id=<?= $radar->getId() ?>">Redaguoti</a>
+            <a href="<?= $base ?>radars/delete?id=<?= $radar->getId() ?>">Trinti</a>
         </td>
     </tr>
 <?php endforeach; ?>

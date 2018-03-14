@@ -12,37 +12,37 @@ class Radar
     /**
      * @var int
      */
-    public $id;
+    private $id;
 
     /**
      * @var \DateTime
      */
-    public $date;
+    private $date;
 
     /**
      * @var string
      */
-    public $number;
+    private $number;
 
     /**
      * @var float
      */
-    public $distance;
+    private $distance;
 
     /**
      * @var float
      */
-    public $time;
+    private $time;
 
     /**
      * @var float
      */
-    public $speed;
+    private $speed;
 
     /**
      * @var int
      */
-    public $driverId;
+    private $driverId;
 
     /**
      * @param int $limit
@@ -50,7 +50,7 @@ class Radar
      *
      * @return array|Radar[]
      */
-    public static function all(int $limit, int $offset)
+    public static function all(int $limit = 5, int $offset = 0)
     {
         $results = DB::connection()->query('SELECT * FROM radars ORDER BY `number`, `date` DESC')->fetchAll();
 
@@ -100,5 +100,153 @@ class Radar
         }
 
         return null;
+    }
+
+    /**
+     * @param int $id
+     */
+    public static function remove(int $id)
+    {
+        //TODO: sukurkite remove algoritma.
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return $this
+     */
+    public function setId(int $id = null): Radar
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getDate(): DateTime
+    {
+        return $this->date;
+    }
+
+    /**
+     * @param DateTime $date
+     *
+     * @return $this
+     */
+    public function setDate(DateTime $date = null): Radar
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNumber(): string
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param string $number
+     *
+     * @return $this
+     */
+    public function setNumber(string $number = null): Radar
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getDistance(): float
+    {
+        return $this->distance;
+    }
+
+    /**
+     * @param float $distance
+     *
+     * @return $this
+     */
+    public function setDistance(float $distance = null): Radar
+    {
+        $this->distance = $distance;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getTime(): float
+    {
+        return $this->time;
+    }
+
+    /**
+     * @param float $time
+     *
+     * @return $this
+     */
+    public function setTime(float $time = null): Radar
+    {
+        $this->time = $time;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getSpeed(): float
+    {
+        return $this->speed;
+    }
+
+    /**
+     * @param float $speed
+     *
+     * @return $this
+     */
+    public function setSpeed(float $speed = null): Radar
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDriverId(): int
+    {
+        return $this->driverId;
+    }
+
+    /**
+     * @param int $driverId
+     *
+     * @return $this
+     */
+    public function setDriverId(int $driverId = null): Radar
+    {
+        $this->driverId = $driverId;
+
+        return $this;
     }
 }

@@ -1,3 +1,1 @@
-Nauja repositorija
-
-git checkout -b brancho_pavadinimas
+##Radaru projektas
